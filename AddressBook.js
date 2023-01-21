@@ -44,7 +44,7 @@ class ContactDetails {
  */
 contactList = new Array();
 contact = new ContactDetails();
-function addDetails() {
+function addContactDetails() {
     /**
      * In this method Ability to add contact details to address book
      */
@@ -58,7 +58,7 @@ function addDetails() {
     contact.email = email();
     contactList.push(contact)
 }
-function printDetails() {
+function printContactDetails() {
     /**
      * In this method print the Address book contact details
      */
