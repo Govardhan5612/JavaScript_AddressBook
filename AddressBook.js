@@ -193,3 +193,19 @@ function countOfContacts() {
     let count = contactList.length;
     console.log("Cont of contact details : " + count);
 }
+function personInCity() {
+    /**
+     * In this method find the contact person in city or not
+     */
+    let contact = new Array();
+    let name = prompt("Enter person first name");
+    let city = prompt("Enter city name")
+    contact.push(contactList.filter(x => x.firstName == name && x.city == city));
+    if (contact.length == 0) {
+        console.log(name + " details not found in " + city);
+    }
+    else {
+        console.log(name + " details found in " + city);
+        console.log(contact);
+    }
+}
