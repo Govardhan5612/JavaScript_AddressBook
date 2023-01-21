@@ -39,31 +39,6 @@ class ContactDetails {
         return "First Name : " + this.firstName + ", Last Name : " + this.lastName + ", Address : " + this.address + ", City : " + this.city + ", State : " + this.state + ", zip code : " + this.zip + ", Phone Number : " + this.phoneNumber + ", email : " + this.email;
     }
 }
-/**
- * Create Array and ContactDetails Objects
- */
-contactList = new Array();
-contact = new ContactDetails();
-function addContactDetails() {
-    /**
-     * In this method Ability to add contact details to address book
-     */
-    contact.firstName = firstName('first name');
-    contact.lastName = firstName('last name');
-    contact.address = address('Address');
-    contact.city = address('city');
-    contact.state = address('State');
-    contact.zip = zip();
-    contact.phoneNumber = phoneNumber();
-    contact.email = email();
-    contactList.push(contact)
-}
-function printContactDetails() {
-    /**
-     * In this method print the Address book contact details
-     */
-    console.log(contactList);
-}
 function firstName(value) {
     /**
      * In this method validate the first name and last name
@@ -139,4 +114,49 @@ function email() {
     }
     return input;
 }
+/**
+ * Create Array and ContactDetails Objects
+ */
+contactList = new Array();
+function addContactDetails() {
+    /**
+     * In this method Ability to add contact details to address book
+     */
+    contact = new ContactDetails();
+    contact.firstName = firstName('first name');
+    contact.lastName = firstName('last name');
+    contact.address = address('Address');
+    contact.city = address('city');
+    contact.state = address('State');
+    contact.zip = zip();
+    contact.phoneNumber = phoneNumber();
+    contact.email = email();
+    contactList.push(contact)
+}
+function printContactDetails() {
+    /**
+     * In this method print the Address book contact details
+     */
+    console.log(contactList);
+}
+function editContactDetails() {
+    /**
+     * In this method edit the existing contact details
+     */
+    let input = prompt("Enter first name");
+    let status = true;
+    for (let i = 0; i < contactList.length; i++) {
+        if (contactList[i].firstName == input) {
+            contactList.splice(i, 1);
+            status = false;
+            break;
+        }
+    }
+    if (status == true) {
+        console.log(input + " details not found");
+    }
+    else {
+        addContactDetails();
+    }
 
+}
