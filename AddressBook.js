@@ -179,3 +179,10 @@ function deleteContactDetails() {
         console.log(input + " details are deleted");
     }
 }
+function countOfContacts() {
+    /**
+     * In this method print the total number of contacts in array
+     */
+    let count = contactList.length;
+    console.log("Cont of contact details : " + count);
+}
