@@ -209,3 +209,17 @@ function personInCity() {
         console.log(contact);
     }
 }
+function printPersonsInCity() {
+    /**
+     * In this method print the contact person in city
+     */
+    let contact = new Array();
+    let city = prompt("Enter city name")
+    contact.push(contactList.filter(x => x.city == city));
+    if (contact.length == 0) {
+        console.log("No details found in " + city);
+    }
+    else {
+        console.log(contact);
+    }
+}
