@@ -158,5 +158,24 @@ function editContactDetails() {
     else {
         addContactDetails();
     }
-
+}
+function deleteContactDetails() {
+    /**
+     * In this method delete the contact details use first name
+     */
+    let input = prompt("Enter first name");
+    let status = true;
+    for (let i = 0; i < contactList.length; i++) {
+        if (contactList[i].firstName == input) {
+            contactList.splice(i, 1);
+            status = false;
+            break;
+        }
+    }
+    if (status == true) {
+        console.log(input + " details not found");
+    }
+    else {
+        console.log(input + " details are deleted");
+    }
 }
