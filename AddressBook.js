@@ -124,14 +124,21 @@ function addContactDetails() {
      */
     contact = new ContactDetails();
     contact.firstName = firstName('first name');
-    contact.lastName = firstName('last name');
-    contact.address = address('Address');
-    contact.city = address('city');
-    contact.state = address('State');
-    contact.zip = zip();
-    contact.phoneNumber = phoneNumber();
-    contact.email = email();
-    contactList.push(contact)
+    let status;
+    status = contactList.filter(x => x.firstName == contact.firstName);
+    if (status == 0) {
+        contact.lastName = firstName('last name');
+        contact.address = address('Address');
+        contact.city = address('city');
+        contact.state = address('State');
+        contact.zip = zip();
+        contact.phoneNumber = phoneNumber();
+        contact.email = email();
+        contactList.push(contact)
+    }
+    else {
+        console.log(contact.firstName + " details is already exists");
+    }
 }
 function printContactDetails() {
     /**
