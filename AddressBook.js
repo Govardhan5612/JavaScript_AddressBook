@@ -259,3 +259,10 @@ function sortByFirstName() {
     sort(contactList, "firstName");
     console.log(contactList);
 }
+function sortByCity() {
+    /**
+     * Sort the array elements use contact first person's city name
+     */
+    sort(contactList, "city");
+    console.log(contactList);
+}
