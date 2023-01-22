@@ -235,6 +235,27 @@ function countPersonsInCity() {
         console.log("No details found in " + city);
     }
     else {
-        console.log("Number of contact persons in "+city+" : "+count);
+        console.log("Number of contact persons in " + city + " : " + count);
     }
+}
+function sort(value, name) {
+    /**
+     * This method used to sort the elements in array
+     */
+    for (let i = 0; i < value.length; i++) {
+        for (let j = 0; j < value.length; j++) {
+            if (value[i][name] < value[j][name]) {
+                let temp = value[i];
+                value[i] = value[j];
+                value[j] = temp;
+            }
+        }
+    }
+}
+function sortByFirstName() {
+    /**
+     * Sort the array elements use contact first person's name
+     */
+    sort(contactList, "firstName");
+    console.log(contactList);
 }
